@@ -6,21 +6,157 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+#root {
+  height: auto;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  flex-shrink: 0;
+
+}
+
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding-bottom: 20px;
+}
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  word-spacing: 1px;
+}
+
 * {
+  box-sizing: border-box;
+  letter-spacing: 0.5px;
+  font-family: 'Neue HaaS Grotesk Disp W05_55R', sans-serif;
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    color-scheme: light;
+  }
+  body {
+    color: black;
+    background: white;
+  }
+}
+
+@font-face{
+  font-family:MT-Roboto;
+  font-style:normal;
+  font-weight:400;
+  src:local("Roboto"),local("Roboto-Regular"),url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2) format("woff2");
+  unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F
+}
+
+.header {
+  width: 100%;
+  height: 3.7rem;
+  max-width: 2300px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  -webkit-box-pack: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 9999999;
+  background: #fff;
+}
+
+.mainMenu {
+  position: absolute;
+  width: 100vw;
+  max-width: 2300px;
+  background-color: rgb(255, 255, 255);
+  left: 0px;
+  top: calc(3.7rem - 2px);
+  max-height: calc(100vh - 3.7rem);
+  z-index: 100;
+  border-bottom: 1px solid rgb(229, 229, 229);
+  border-top: 1px solid rgb(229, 229, 229);
+  flex-direction: row;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+  line-height: 1.2rem;
+  display: flex;
+}
+
+.mainMenu .row li a {
+  padding: 0px;
+  display: block;
+  box-sizing: border-box
+}
+
+.menuImg {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-right: 20px;
+}
+
+.isNew {
+  color: rgb(0, 54, 242);
+  line-height: normal;
+  vertical-align: top;
+  padding-left: 0.25rem;
+}
+
+.mainMenu .row {
+  display: flex;
+  flex-grow:  0.25;
+  flex-shrink: 1;
+  flex-basis: 0%;
+  flex-direction: column;
+  list-style-type: none;
+  border-left: 1.5px solid rgb(229, 229, 229);
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.title {
+  margin: 0.9rem 0px 2rem;
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  background: rgb(255, 255, 255);
+  box-sizing: border-box;
+}
+
+ul.row.highlighted-menu {
+
+}
+
+.title:hover {
+  color: mediumseagreen;
+  background: none;
+}
+
+.featuredBox {
+padding-left: 10px;
+display: inline-block;
+}
+
+li:hover {
+  background-color: #f3f4f3d0;
 }
